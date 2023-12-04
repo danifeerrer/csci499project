@@ -1,0 +1,35 @@
+
+
+
+
+[
+    
+
+    { 
+        "id" : 1,
+        "image":  "https://www.howitworksdaily.com/wp-content/uploads/2018/11/HowItWorks-masthead_blue.jpg",
+        "title": "  'Simply Upload Your MRI or Your Medical Information, and Our Trained Machine Learning Model Will Predict Whether or Not You Have a Brain Tumor ' ",
+        "path": "/model-explanation",
+        "buttonLabel" : "Learn More"
+    },
+
+    { 
+        "id" : 2,
+        "image" :"https://images.squarespace-cdn.com/content/v1/5c05660c50a54fd90d111ec7/1613664103249-JWSMHJGGC1HC1IFMHLYI/tech-v-exp.jpg",
+        "title": "Waiting for a MRI result? Upload your MRI Picture and Find Out Today!",
+        "path": "/MRI",
+        "buttonLabel" : "Get Started With MRI"
+
+
+    },
+
+    { 
+        "id" : 3,
+        "image":  " https://images.squarespace-cdn.com/content/v1/54905286e4b050812345644c/1492708052579-1XM0DV1Q40UR2HZ9ELTP/GettyImages-578311388.jpg?format=1500w",
+        "title": " We understand MRI can be costly, Fill Out Your Health Information and Check If You Have a Probability",
+        "path": "/StrokeCal",
+        "buttonLabel" : "Explore Now"
+    }
+
+
+] 

@@ -1,1 +1,0 @@
-//might create picture slide show for main page in here

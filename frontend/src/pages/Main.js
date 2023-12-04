@@ -1,70 +1,76 @@
 import React from 'react';
-import { Typography } from '@mui/material';
-import MRI from '../components/slider/MRI.jpeg';
-import CSV from '../components/slider/CSV.png';
+import {Grid, Box, Paper, Typography, Button  } from '@mui/material';
 import Footer from './Footer';
+import ImgSlide from '../components/slider/ImgSlide';
+
+import patient from '../components/images/patient.jpeg'
+import doctors from '../components/images/doctors.png'
+import lab from '../components/images/lab.png'
+
+
+const images = {
+  flex: 1, 
+  margin: '10px', 
+  display: 'flex', 
+  flexWrap: 'wrap'
+}
+
+const explanation= {
+  marginTop: '20px',
+  marginRight:'20px',
+  marginLeft:'20px',
+  flex: 1,
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  fontSize: '1.3rem',
+}
+
+
 
 const Main = () => {
-  return (
-    <div>
-        <div
-        style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            margin: 'auto',
-            padding: '50px',
-            textAlign: 'center',
-        }}
-        >
-            <div
-                style={{
-                    display: 'flex',
-                    justifyContent: 'space-between', // To push the images to the left and right edges
-                    marginBottom: '50px', // Space between the images and text
-                }}
-                >
-                <div>
-                    <img src={MRI} alt="MRI" style={{ width: '75%' }} />
-                </div>
-                <div>
-                    <img src={CSV} alt="CSV" style={{ width: '75%'}} />
-                </div>
-            </div>
-        </div>
+  const containerStyle = {
+    margin: 'auto',
+    padding: '80px',
+    justifyContent: 'center',
+    alignItems: 'center',
+  };
 
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                marginBottom: '10px',
-              }}        
-        >
-            
-            <Typography
-                variant='h2'
-                color='#414466'
-                fontFamily='Raleway'
-                fontWeight='bold'
-                gutterBottom
-            >
-                How It Works?
-            </Typography>
-            <Typography
-                variant='h6'
-                fontFamily='Raleway'
-                fontWeight='bold'
-                color='#414466'
-                display='block'
-                gutterBottom
-                style={{ marginTop: '20px', fontSize: '24px' }}
-            >
-                By simply uploading your MRI our machine learning model <br/> will predict whether or not you have a brain tumor.
-            </Typography>
-        </div>
-    </div>
+
+
+  return (
+    <Paper style={containerStyle} className="Main" >
+
+      <Grid>
+        <ImgSlide/>
+      </Grid>
+
+      <h1 style={{flex: 1, display:'flex', justifyContent:'center'}}>Target Audiences for Our Website are </h1>
+      <Box 
+        marginTop='50px'
+      >
+
+      <div style={images} >
+        <img src={patient} width="400px" height="250px" alt="patient" />
+        <Typography style={explanation}> Patient or Anyone Who is Concerned About Brain Tumor, can use the features on our website</Typography>
+      </div>
+      
+      <div style={images}>
+        <img src={doctors} width="400px" height="250px" alt="doctors" />
+        <Typography style={explanation}>Doctors and Medical professionals who need a 4th opinion When Evaluating Brain MRI</Typography>
+      </div>
+      
+      <div style={images}>
+        <img src={lab} width="400px" height="250px" alt="lab" />
+        <Typography style={explanation}>Researchers and Lab Professionals Who Study About Brain Tumor </Typography>
+      </div>
+
+
+      </Box>
+     
+
+      <Footer />
+    </Paper>
   );
 };
 

@@ -41,11 +41,11 @@ const Navbar = () => {
           </Button>
         </NavLink>
 
-        <NavLink to="/model-explanation" activeClassName="active" className="nav-link">
-  <Button sx={buttonStyle} color="inherit">
-    How It Works
-  </Button>
-</NavLink>
+        <NavLink to="/Code" activeClassName="active" className="nav-link">
+          <Button sx={buttonStyle} color="inherit">
+            Code
+          </Button>
+        </NavLink>
 
         <NavLink
           to="/MRI"

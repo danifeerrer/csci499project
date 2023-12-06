@@ -9,6 +9,7 @@ import Navbar from "./components/Navbar.js";
 import  { BrowserRouter as Router ,Routes, Route} from 'react-router-dom';   
 import { Container } from '@mui/material';
 import Footer from './pages/Footer.js';
+import Jupyter from './pages/Jupyter.js';
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path='/' element={<Main />} />
           <Route path='MRI' element={<MRI />} />
           <Route path='StrokeCal' element={<StrokeCal />} />
+          <Route path='Code' element={<Jupyter />} />
         </Routes>
     </Router>
     

@@ -2,20 +2,27 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 import { Link, NavLink as Router } from 'react-router-dom'; // Import Link
-import logo from '../components/images/logo.png';
+import logo from '../data/logo.png';
 
 const Navbar = () => {
   const navBarStyle = {
     position: 'fixed',
+    background: '#2c3e50'
+    ,
+  };
 
-    left: 0,
-    right: 0,
-    top: 0,
-    background: '#2c3e50',
-    
+
+  const navLink ={
+    textDecoration:'none',
+
+
+
   };
 
   const buttonStyle = {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
     fontFamily: 'Poppins, sans-serif',
     fontSize: '18px',
     fontWeight: 'bold',
@@ -25,32 +32,42 @@ const Navbar = () => {
       backgroundColor: '#3498db',
       color: '#ecf0f1',
     },
+    ":focus":{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }
   };
 
   return (
     <AppBar sx={navBarStyle}>
-      <Toolbar>
+      <Toolbar >
         <img src={logo} width="100px" alt="Logo" />
         <NavLink
           to="/"
           activeClassName="active" 
           className="nav-link"
+          style={navLink}
+
         >
           <Button sx={buttonStyle} color="inherit">
             Home
           </Button>
         </NavLink>
 
-        <NavLink to="/Code" activeClassName="active" className="nav-link">
-          <Button sx={buttonStyle} color="inherit">
-            Code
-          </Button>
-        </NavLink>
+        <NavLink to="/code" activeClassName="active" className="nav-link" style={navLink}
+>
+  <Button sx={buttonStyle} color="inherit">
+    code
+  </Button>
+</NavLink>
 
         <NavLink
           to="/MRI"
           activeClassName="active" 
           className="nav-link"
+          style={navLink}
+
         >
           <Button sx={buttonStyle} color="inherit">
             MRI
@@ -60,6 +77,8 @@ const Navbar = () => {
           to="/StrokeCal"
           activeClassName="active" 
           className="nav-link"
+          style={navLink}
+
         >
           <Button sx={buttonStyle} color="inherit">
             Calculate Stroke

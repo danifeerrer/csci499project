@@ -2,15 +2,16 @@ import React from 'react'
 import { Paper, Button } from '@mui/material'
 import { Link } from 'react-router-dom';
 
-
 function Item({item})
 {   const paperStyle = {
+    marginTop:'80px',
     width: '100%',
     height: 'auto',
-    margin: '0 10px',
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
+    boxShadow: "none"
+    
     }
     const imageContainer ={
         flex: 1,
@@ -20,8 +21,8 @@ function Item({item})
       };
     
     const img ={
-        width: '50%',
-        height: 'auto',
+        width: '75%',
+        height: '100%',
         objectFit: 'cover',
         marginRight:'0',
       };
@@ -35,7 +36,8 @@ function Item({item})
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        fontSize: '1.2rem',
+        fontSize: '1.0rem',
+        
         
         
         
@@ -45,6 +47,7 @@ function Item({item})
         color: '#fff',
         fontWeight: 'bold',
         fontSize: '1.2rem',
+
 
         
   };
@@ -57,8 +60,8 @@ function Item({item})
             
             <div style={title}>
             <h2>{item.title}</h2>
-            <Link to={item.path}> 
-            <Button variant="contained" style={buttonStyle}  >
+            <Link to={item.path} style={{textDecoration:'none'}}> 
+            <Button style={buttonStyle}  >
                 {item.buttonLabel}
             </Button>
             </Link>

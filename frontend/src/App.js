@@ -1,15 +1,13 @@
-import Main from './pages/Main.js'
 import React from 'react';
-
-
-import StrokeCal from './pages/StrokeCal.js'
-import MRI from './pages/MRI.js'
-import Navbar from "./components/Navbar.js";
-
 import  { BrowserRouter as Router ,Routes, Route} from 'react-router-dom';   
-import { Container } from '@mui/material';
-import Footer from './pages/Footer.js';
-import Jupyter from './pages/Jupyter.js';
+
+
+import Main from './components/Main.js'
+import StrokeCal from './components/StrokeCal.js'
+import MRI from './components/MRI.js'
+import Navbar from "./components/Navbar.js";
+import Footer from './components/Footer.js';
+import Jupyter from './components/Jupyter.js';
 
 
 function App() {

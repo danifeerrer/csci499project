@@ -1,18 +1,15 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
-import { Link, NavLink as Router } from 'react-router-dom'; // Import Link
+import { AppBar, Toolbar, Button } from '@mui/material';
 import logo from '../components/images/logo.png';
 
 const Navbar = () => {
   const navBarStyle = {
     position: 'fixed',
-
     left: 0,
     right: 0,
     top: 0,
     background: '#2c3e50',
-    
   };
 
   const buttonStyle = {
@@ -20,7 +17,8 @@ const Navbar = () => {
     fontSize: '18px',
     fontWeight: 'bold',
     color: '#ecf0f1',
-    marginLeft: '10px',
+    marginLeft: '30px', // Adjust the left margin
+    marginRight: '50px', // Adjust the right margin
     ":hover": {
       backgroundColor: '#3498db',
       color: '#ecf0f1',
@@ -31,11 +29,7 @@ const Navbar = () => {
     <AppBar sx={navBarStyle}>
       <Toolbar>
         <img src={logo} width="100px" alt="Logo" />
-        <NavLink
-          to="/"
-          activeClassName="active" 
-          className="nav-link"
-        >
+        <NavLink to="/" activeClassName="active" className="nav-link">
           <Button sx={buttonStyle} color="inherit">
             Home
           </Button>
@@ -43,24 +37,16 @@ const Navbar = () => {
 
         <NavLink to="/Code" activeClassName="active" className="nav-link">
           <Button sx={buttonStyle} color="inherit">
-            Code
+            CNN Code
           </Button>
         </NavLink>
 
-        <NavLink
-          to="/MRI"
-          activeClassName="active" 
-          className="nav-link"
-        >
+        <NavLink to="/MRI" activeClassName="active" className="nav-link">
           <Button sx={buttonStyle} color="inherit">
             MRI
           </Button>
         </NavLink>
-        <NavLink
-          to="/StrokeCal"
-          activeClassName="active" 
-          className="nav-link"
-        >
+        <NavLink to="/StrokeCal" activeClassName="active" className="nav-link">
           <Button sx={buttonStyle} color="inherit">
             Calculate Stroke
           </Button>

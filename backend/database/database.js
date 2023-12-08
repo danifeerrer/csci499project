@@ -9,10 +9,10 @@ const port = 5000;
 app.use(cors())
 
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'BTClassifier$10',
-  database: 'btlogin',
+  host: 'database-1.cxqaule7kqob.us-east-1.rds.amazonaws.com',
+  user: 'superadmin',
+  password: 'Thesuperadmin$1',
+  database: 'BTCLogin',
 });
 
 db.connect((err) => {
@@ -36,7 +36,7 @@ app.post('/api/createAccount', async (req, res) => {
 
 
     // Insert the user into the database
-    const query = 'INSERT INTO users_results (username, passwd) VALUES (?, ?)';
+    const query = 'INSERT INTO user_results (username, passwd) VALUES (?, ?)';
     db.query(query, [username, password], (err, result) => {
       if (err) {
         console.error('Error executing query:', err);
@@ -64,7 +64,7 @@ app.post('/api/login', async (req, res) => {
     }
 
     // Check if the user exists in the database (replace with your authentication logic)
-    const query = 'SELECT * FROM users_results WHERE username = ? AND passwd = ?';
+    const query = 'SELECT * FROM user_results WHERE username = ? AND passwd = ?';
     db.query(query, [username, password], (err, result) => {
       if (err) {
         console.error('Error executing query:', err);

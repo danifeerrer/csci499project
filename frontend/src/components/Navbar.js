@@ -8,15 +8,10 @@ const Navbar = () => {
   const navBarStyle = {
     position: 'fixed',
     background: '#2c3e50'
-    ,
   };
 
-
-  const navLink ={
-    textDecoration:'none',
-
-
-
+  const navLink = {
+    textDecoration: 'none',
   };
 
   const buttonStyle = {
@@ -32,42 +27,52 @@ const Navbar = () => {
       backgroundColor: '#3498db',
       color: '#ecf0f1',
     },
-    ":focus":{
+    ":focus": {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
     }
   };
 
+  // Check if the token is present in localStorage
+  const token = localStorage.getItem('token');
+  const isLoggedIn = token;
+
   return (
     <AppBar sx={navBarStyle}>
-      <Toolbar >
+      <Toolbar>
         <img src={logo} width="100px" alt="Logo" />
         <NavLink
           to="/"
-          activeClassName="active" 
+          activeClassName="active"
           className="nav-link"
           style={navLink}
-
         >
           <Button sx={buttonStyle} color="inherit">
             Home
           </Button>
         </NavLink>
 
-        <NavLink to="/code" activeClassName="active" className="nav-link" style={navLink}
->
-  <Button sx={buttonStyle} color="inherit">
-    code
-  </Button>
-</NavLink>
+        <NavLink to="/code" activeClassName="active" className="nav-link" style={navLink}>
+          <Button sx={buttonStyle} color="inherit">
+            Code
+          </Button>
+        </NavLink>
+
+        {/* Conditionally render the "Login" link */}
+        {!isLoggedIn && (
+          <NavLink to="/login" activeClassName="active" className="nav-link" style={navLink}>
+            <Button sx={buttonStyle} color="inherit">
+              Login
+            </Button>
+          </NavLink>
+        )}
 
         <NavLink
           to="/MRI"
-          activeClassName="active" 
+          activeClassName="active"
           className="nav-link"
           style={navLink}
-
         >
           <Button sx={buttonStyle} color="inherit">
             MRI
@@ -75,10 +80,9 @@ const Navbar = () => {
         </NavLink>
         <NavLink
           to="/StrokeCal"
-          activeClassName="active" 
+          activeClassName="active"
           className="nav-link"
           style={navLink}
-
         >
           <Button sx={buttonStyle} color="inherit">
             Calculate Stroke

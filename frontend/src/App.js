@@ -1,15 +1,16 @@
-import Main from './pages/Main.js'
 import React from 'react';
-
-
-import StrokeCal from './pages/StrokeCal.js'
-import MRI from './pages/MRI.js'
-import Navbar from "./components/Navbar.js";
-
 import  { BrowserRouter as Router ,Routes, Route} from 'react-router-dom';   
-import { Container } from '@mui/material';
-import Footer from './pages/Footer.js';
-import Jupyter from './pages/Jupyter.js';
+
+
+import Main from './components/Main.js'
+import StrokeCal from './components/StrokeCal.js'
+import MRI from './components/MRI.js'
+import Navbar from "./components/Navbar.js";
+import Footer from './components/Footer.js';
+import Jupyter from './components/Jupyter.js';
+import AccountCreation from './components/AccountCreation.js';
+import Login from './components/Login.js';
+import Logout from './components/Logout.js';
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
           <Route path='MRI' element={<MRI />} />
           <Route path='StrokeCal' element={<StrokeCal />} />
           <Route path='Code' element={<Jupyter />} />
+          <Route path='Login' element={<Login />} />
+          <Route path='AccountCreation' element={<AccountCreation />} />
+          <Route path='Logout' element={<Logout />} />
         </Routes>
     </Router>
     

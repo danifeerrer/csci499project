@@ -1,11 +1,7 @@
 import React from 'react';
 import {Grid, Box, Paper, Typography, Button  } from '@mui/material';
 import Footer from './Footer';
-import ImgSlide from '../components/slider/ImgSlide';
-
-import patient from '../components/images/patient.jpeg'
-import doctors from '../components/images/doctors.png'
-import lab from '../components/images/lab.png'
+import ImgSlide from './ImgSlide';
 
 
 const images = {
@@ -30,10 +26,10 @@ const explanation= {
 
 const Main = () => {
   const containerStyle = {
-    margin: 'auto',
-    padding: '80px',
+
     justifyContent: 'center',
     alignItems: 'center',
+    boxShadow: "none",
   };
 
 
@@ -45,11 +41,16 @@ const Main = () => {
         <ImgSlide/>
       </Grid>
 
+
+    {/* 
+
+
+
       <h1 style={{flex: 1, display:'flex', justifyContent:'center'}}>Target Audiences for Our Website are </h1>
       <Box 
         marginTop='50px'
       >
-
+          
       <div style={images} >
         <img src={patient} width="400px" height="250px" alt="patient" />
         <Typography style={explanation}> Patient or Anyone Who is Concerned About Brain Tumor, can use the features on our website</Typography>
@@ -63,11 +64,16 @@ const Main = () => {
       <div style={images}>
         <img src={lab} width="400px" height="250px" alt="lab" />
         <Typography style={explanation}>Researchers and Lab Professionals Who Study About Brain Tumor </Typography>
-      </div>
-
+      </div> 
+      
+            
 
       </Box>
-     
+      
+      
+      
+      */}   
+
 
       <Footer />
     </Paper>

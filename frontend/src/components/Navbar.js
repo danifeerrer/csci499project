@@ -53,20 +53,19 @@ const Navbar = () => {
           </Button>
         </NavLink>
 
+        <NavLink to="/model-explanation" activeClassName="active" className="nav-link">
+  <Button sx={buttonStyle} color="inherit">
+    How It Works
+  </Button>
+</NavLink>
+
         <NavLink to="/code" activeClassName="active" className="nav-link" style={navLink}>
           <Button sx={buttonStyle} color="inherit">
             Code
           </Button>
         </NavLink>
 
-        {/* Conditionally render the "Login" link */}
-        {!isLoggedIn && (
-          <NavLink to="/login" activeClassName="active" className="nav-link" style={navLink}>
-            <Button sx={buttonStyle} color="inherit">
-              Login
-            </Button>
-          </NavLink>
-        )}
+        
 
         <NavLink
           to="/MRI"
@@ -88,6 +87,23 @@ const Navbar = () => {
             Calculate Stroke
           </Button>
         </NavLink>
+
+        {/* Conditionally render the "Login" link */}
+        {!isLoggedIn && (
+          <NavLink to="/login" activeClassName="active" className="nav-link" style={navLink}>
+            <Button sx={buttonStyle} color="inherit">
+              Login
+            </Button>
+          </NavLink>
+        )}
+
+        {isLoggedIn && (
+          <NavLink to="/logout" activeClassName="active" className="nav-link" style={navLink}>
+          <Button sx={buttonStyle} color="inherit">
+            Log out
+          </Button>
+        </NavLink>
+        )}
       </Toolbar>
     </AppBar>
   );

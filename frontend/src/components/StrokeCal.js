@@ -1,20 +1,17 @@
 import React, { useState } from 'react';
-import { Box, TextField, Button, Typography, Paper, Select, MenuItem, Table, TableBody, TableCell, TableRow } from '@mui/material';
+import { Box, TextField, Button, Grid, Typography, Paper, Select, MenuItem } from '@mui/material';
 import { Container } from '@mui/system';
 
 const StrokeCal = () => {
   const [formData, setFormData] = useState({
-    gender: '',
     age: 0,
-    hypertension: '',
-    heartDisease: '',
-    maritalStatus: '',
-    workType: '',
-    residence: '',
+    hypertension: 0,
+    heartDisease: 0,
     glucoseLevel: 0,
     bmi: 0,
-    smokingStatus: '',
   });
+
+  const [result, setResult] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,163 +21,114 @@ const StrokeCal = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData); 
+
+    try {
+      const response = await fetch('http://localhost:5003/stroke', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        setResult(data.stroke_probability);
+      } else {
+        setResult('Error');
+      }
+    } catch (error) {
+      console.error(error);
+      setResult('Error');
+    }
   };
 
   return (
     <Container
-      margin="auto"
+      maxWidth="sm"
       sx={{
+        display: 'flex',
         flexDirection: 'column',
-        display: 'grid',
-        margin: 'auto',
-        marginTop: '64px',
+        alignItems: 'center',
+        marginTop: '100px',
       }}
     >
       <form onSubmit={handleSubmit}>
-        <Table>
-          <TableBody>
-            <TableRow>
-              <TableCell>
-                <Typography variant="h6">Gender</Typography>
-                <Select
-                  name="gender"
-                  value={formData.gender}
-                  onChange={handleChange}
-                >
-                  <MenuItem value="">Select Gender</MenuItem>
-                  <MenuItem value="Male">Male</MenuItem>
-                  <MenuItem value="Female">Female</MenuItem>
-                </Select>
-              </TableCell>
-              <TableCell>
-                <Typography variant="h6">Age</Typography>
-                <TextField
-                  name="age"
-                  type="number"
-                  placeholder="Enter Age"
-                  value={formData.age}
-                  onChange={handleChange}
-                  sx={{ width: '100px' }}
-                />
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <Typography variant="h6">Hypertension/High Blood Pressure</Typography>
-                <Select
-                  name="hypertension"
-                  value={formData.hypertension}
-                  onChange={handleChange}
-                >
-                  <MenuItem value="">Select Hypertension/High Blood Pressure</MenuItem>
-                  <MenuItem value="Yes">Yes</MenuItem>
-                  <MenuItem value="No">No</MenuItem>
-                </Select>
-              </TableCell>
-              <TableCell>
-                <Typography variant="h6">Heart Disease</Typography>
-                <Select
-                  name="heartDisease"
-                  value={formData.heartDisease}
-                  onChange={handleChange}
-                >
-                  <MenuItem value="">Select Heart Disease</MenuItem>
-                  <MenuItem value="Yes">Yes</MenuItem>
-                  <MenuItem value="No">No</MenuItem>
-                </Select>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <Typography variant="h6">Marital Status</Typography>
-                <Select
-                  name="maritalStatus"
-                  value={formData.maritalStatus}
-                  onChange={handleChange}
-                >
-                  <MenuItem value="">Select Marital Status</MenuItem>
-                  <MenuItem value="Married">Married</MenuItem>
-                  <MenuItem value="Single">Single</MenuItem>
-                </Select>
-              </TableCell>
-              <TableCell>
-                <Typography variant="h6">Work Type</Typography>
-                <Select
-                  name="workType"
-                  value={formData.workType}
-                  onChange={handleChange}
-                >
-                  <MenuItem value="">Select Work Type</MenuItem>
-                  <MenuItem value="Private">Private</MenuItem>
-                  <MenuItem value="Self-employed">Self-employed</MenuItem>
-                  <MenuItem value="Govt_job">Govt Job</MenuItem>
-                  <MenuItem value="Stay_at_home">Stay at Home</MenuItem>
-                  <MenuItem value="Never_worked">Never Worked</MenuItem>
-                </Select>
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <Typography variant="h6">Residence</Typography>
-                <Select
-                  name="residence"
-                  value={formData.residence}
-                  onChange={handleChange}
-                >
-                  <MenuItem value="">Select Residence</MenuItem>
-                  <MenuItem value="Urban">Urban</MenuItem>
-                  <MenuItem value="Rural">Rural</MenuItem>
-                </Select>
-              </TableCell>
-              <TableCell>
-                <Typography variant="h6">Glucose Level</Typography>
-                <TextField
-                  name="glucoseLevel"
-                  type="number"
-                  placeholder="Enter Glucose Level"
-                  step="0.01"
-                  value={formData.glucoseLevel}
-                  onChange={handleChange}
-                  sx={{ width: '100px' }}
-                />
-              </TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>
-                <Typography variant="h6">BMI</Typography>
-                <TextField
-                  name="bmi"
-                  type="number"
-                  placeholder="Enter BMI"
-                  step="0.1"
-                  value={formData.bmi}
-                  onChange={handleChange}
-                  sx={{ width: '100px' }}
-                />
-              </TableCell>
-              <TableCell>
-                <Typography variant="h6">Smoking Status</Typography>
-                <Select
-                  name="smokingStatus"
-                  value={formData.smokingStatus}
-                  onChange={handleChange}
-                >
-                  <MenuItem value="">Select Smoking Status</MenuItem>
-                  <MenuItem value="Never_smoked">Never Smoked</MenuItem>
-                  <MenuItem value="formerly_smoked">Formerly Smoked</MenuItem>
-                  <MenuItem value="smokes">Smokes</MenuItem>
-                </Select>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-        <Button type="submit" variant="contained" color="primary">
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <Typography variant="h6">Age</Typography>
+            <TextField
+              name="age"
+              type="number"
+              placeholder="Enter Age"
+              value={formData.age}
+              onChange={handleChange}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="h6">Hypertension</Typography>
+            <TextField
+              name="hypertension"
+              select
+              placeholder="Select"
+              value={formData.hypertension}
+              onChange={handleChange}
+              fullWidth
+            >
+              <MenuItem value={0}>No</MenuItem>
+              <MenuItem value={1}>Yes</MenuItem>
+            </TextField>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="h6">Heart Disease</Typography>
+            <TextField
+              name="heartDisease"
+              select
+              placeholder="Select"
+              value={formData.heartDisease}
+              onChange={handleChange}
+              fullWidth
+            >
+              <MenuItem value={0}>No</MenuItem>
+              <MenuItem value={1}>Yes</MenuItem>
+            </TextField>
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="h6">Glucose Level</Typography>
+            <TextField
+              name="glucoseLevel"
+              type="number"
+              placeholder="Enter Glucose Level"
+              step="0.01"
+              value={formData.glucoseLevel}
+              onChange={handleChange}
+              fullWidth
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <Typography variant="h6">BMI</Typography>
+            <TextField
+              name="bmi"
+              type="number"
+              placeholder="Enter BMI"
+              step="0.1"
+              value={formData.bmi}
+              onChange={handleChange}
+              fullWidth
+            />
+          </Grid>
+        </Grid>
+        <Button type="submit" variant="contained" color="primary" fullWidth style={{marginTop: '15px'}}>
           Submit
         </Button>
       </form>
+      {result !== null && (
+        <div style={{marginTop: '10px'}}>
+          <Typography variant="h6">Stroke Probability: {result}</Typography>
+        </div>
+      )}
     </Container>
   );
 };

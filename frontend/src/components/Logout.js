@@ -1,4 +1,5 @@
 import React from 'react';
+import '../data/Logout.css';
 
 const Logout = () => {
   const handleLogout = () => {
@@ -10,11 +11,14 @@ const Logout = () => {
     // Redirect the user to the home page or another appropriate location
     window.location.href = '/';
   };
+  const username = localStorage.getItem('Username')
 
   return (
-    <div>
-      <h2>Logout</h2>
-      <button onClick={handleLogout}>Logout</button>
+    <div className="logout-container">
+      <h2>{username}, it was a pleasure having you back < br/> in our app, we hope you come back soon </h2>
+      <button className="logout-button" onClick={handleLogout}>
+        Log out
+      </button>
     </div>
   );
 };

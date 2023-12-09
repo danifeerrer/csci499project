@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { AppBar, Toolbar, Typography, Button } from '@mui/material';
-import { Link, NavLink as Router } from 'react-router-dom'; // Import Link
+import { Link, NavLink as Router } from 'react-router-dom';
 import logo from '../data/logo.png';
 
 const Navbar = () => {
@@ -66,6 +66,14 @@ const Navbar = () => {
               Login
             </Button>
           </NavLink>
+        )}
+
+        {isLoggedIn && (
+          <NavLink to="/logout" activeClassName="active" className="nav-link" style={navLink}>
+          <Button sx={buttonStyle} color="inherit">
+            Log out
+          </Button>
+        </NavLink>
         )}
 
         <NavLink

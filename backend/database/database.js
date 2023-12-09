@@ -74,7 +74,7 @@ app.post('/api/login', async (req, res) => {
         if (result.length > 0) {
           const token = jwt.sign({username}, 'secretkey', {expiresIn: '1h'})
           console.log('User logged in');
-          res.status(200).json({ message: 'User logged in', token});
+          res.status(200).json({ message: 'User logged in', token, username});
         } else {
           console.log('Invalid username or password');
           res.status(401).json({ error: 'Invalid username or password' });

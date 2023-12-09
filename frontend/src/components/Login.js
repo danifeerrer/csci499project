@@ -26,12 +26,16 @@ const Login = () => {
       if (response.ok) {
         const data = await response.json();
         const token = data.token;
+        const username = data.username;
         console.log(data.message); // You can handle the response as needed
         localStorage.setItem('token', token);
+        localStorage.setItem('Username', username);
         console.log(token)
+        console.log(username)
 
         // Redirect to Home component on successful login
         navigate('/');
+        window.location.reload()
       } else {
         console.error('Failed to log in');
       }

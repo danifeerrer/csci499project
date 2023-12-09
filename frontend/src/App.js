@@ -11,6 +11,7 @@ import Jupyter from './components/Jupyter.js';
 import AccountCreation from './components/AccountCreation.js';
 import Login from './components/Login.js';
 import Logout from './components/Logout.js';
+import ModelExplanation from './components/ModelExplanation.js'; 
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path='Login' element={<Login />} />
           <Route path='AccountCreation' element={<AccountCreation />} />
           <Route path='Logout' element={<Logout />} />
+          <Route path="/model-explanation" element={<ModelExplanation />} />
         </Routes>
     </Router>
     

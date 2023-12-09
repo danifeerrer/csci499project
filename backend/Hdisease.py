@@ -41,7 +41,7 @@ def predict_heart_disease():
         prediction = loaded_model.predict(input_data)[0]
 
         # Translate the prediction to a meaningful response
-        result = "Absence" if prediction == 'Absence' else "Presence"
+        result = "No heart disease detected." if prediction == 'Absence' else "Heart Disease detected."
 
         return jsonify({'heart_disease_prediction': result})
 

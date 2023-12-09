@@ -12,6 +12,7 @@ import AccountCreation from './components/AccountCreation.js';
 import Login from './components/Login.js';
 import Logout from './components/Logout.js';
 import ModelExplanation from './components/ModelExplanation.js'; 
+import HeartDisease from './components/HeartDisease.js'; 
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Route path='AccountCreation' element={<AccountCreation />} />
           <Route path='Logout' element={<Logout />} />
           <Route path="/model-explanation" element={<ModelExplanation />} />
+          <Route path="/heart-disease" element={<HeartDisease />} />
         </Routes>
     </Router>
     

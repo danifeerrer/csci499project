@@ -87,7 +87,7 @@ const HeartDiseaseCal = () => {
           />
         </div>
         <div>
-          <Typography variant="h6">Fasting Blood Sugar (FBS)</Typography>
+          <Typography variant="h6">Fasting Blood Sugar Over 120 (FBS)</Typography>
           <TextField
             name="fbs"
             type="number"

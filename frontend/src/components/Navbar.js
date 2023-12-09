@@ -96,6 +96,7 @@ const Navbar = () => {
           <Button sx={buttonStyle} color="inherit">
             Heart Disease
           </Button>
+        </NavLink>
 
         {/* Conditionally render the "Login" link */}
         {!isLoggedIn && (

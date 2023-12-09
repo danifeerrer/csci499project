@@ -88,6 +88,15 @@ const Navbar = () => {
           </Button>
         </NavLink>
 
+        <NavLink
+          to="/heart-disease"
+          activeClassName="active" 
+          className="nav-link"
+        >
+          <Button sx={buttonStyle} color="inherit">
+            Heart Disease
+          </Button>
+
         {/* Conditionally render the "Login" link */}
         {!isLoggedIn && (
           <NavLink to="/login" activeClassName="active" className="nav-link" style={navLink}>

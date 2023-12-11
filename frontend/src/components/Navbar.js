@@ -68,18 +68,6 @@ const Navbar = () => {
   </Button>
 </NavLink>
 
-
-
- 
-
-        {isLoggedIn && (
-          <NavLink to="/logout" activeClassName="active" className="nav-link" style={navLink}>
-          <Button sx={buttonStyle} color="inherit">
-            Log out
-          </Button>
-        </NavLink>
-        )}
-
         <NavLink
           to="/MRI"
           activeClassName="active"

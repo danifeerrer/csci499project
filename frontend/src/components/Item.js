@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 function Item({item})
 {   const paperStyle = {
-    marginTop:'80px',
     width: '100%',
     height: 'auto',
     display: 'flex',

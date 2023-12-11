@@ -16,7 +16,10 @@ function Slide() {
     }
   
     return (
-    <Paper style={{boxShadow: "none"}}>
+    <Paper style={{boxShadow: "none",
+    marginTop:'100px',
+    marginLeft:'30px',
+    marginRight:'30px'}}>
         <Carousel style={Paperstyle}>
             {
                 slider.map(item => <Item key={item.id} item={item} /> )

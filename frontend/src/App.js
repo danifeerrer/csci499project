@@ -3,6 +3,7 @@ import  { BrowserRouter as Router ,Routes, Route} from 'react-router-dom';
 
 
 import Main from './components/Main.js'
+import ModelExplnation from'./components/ModelExplanation.js'
 import StrokeCal from './components/StrokeCal.js'
 import MRI from './components/MRI.js'
 import Navbar from "./components/Navbar.js";
@@ -23,13 +24,14 @@ function App() {
           <Route path='/' element={<Main />} />
           <Route path='MRI' element={<MRI />} />
           <Route path='StrokeCal' element={<StrokeCal />} />
-          <Route path='Code' element={<Jupyter />} />
           <Route path='Login' element={<Login />} />
           <Route path='AccountCreation' element={<AccountCreation />} />
           <Route path='Logout' element={<Logout />} />
           <Route path="/model-explanation" element={<ModelExplanation />} />
           <Route path="/heart-disease" element={<HeartDisease />} />
         </Routes>
+
+        <Footer/>
     </Router>
     
   );

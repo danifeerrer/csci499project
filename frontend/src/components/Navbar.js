@@ -53,19 +53,21 @@ const Navbar = () => {
           </Button>
         </NavLink>
 
-        <NavLink to="/model-explanation" activeClassName="active" className="nav-link">
+        <NavLink to="/model-explanation" activeClassName="active" className="nav-link"  style={navLink}>
   <Button sx={buttonStyle} color="inherit">
     How It Works
   </Button>
 </NavLink>
 
-        <NavLink to="/code" activeClassName="active" className="nav-link" style={navLink}>
+
+
+     {/*   <NavLink to="/code" activeClassName="active" className="nav-link" style={navLink}>
           <Button sx={buttonStyle} color="inherit">
             Code
           </Button>
         </NavLink>
 
-        
+  */}
 
         {isLoggedIn && (
           <NavLink to="/logout" activeClassName="active" className="nav-link" style={navLink}>
@@ -100,8 +102,9 @@ const Navbar = () => {
           to="/heart-disease"
           activeClassName="active" 
           className="nav-link"
+          style={navLink}
         >
-          <Button sx={buttonStyle} color="inherit">
+          <Button sx={buttonStyle} color="inherit" >
             Heart Disease
           </Button>
         </NavLink>

@@ -3,6 +3,21 @@ import { Link } from 'react-router-dom';
 import { Box, Typography, Button, Grid } from '@mui/material';
 import Footer from './Footer';
 
+
+const navLink = {
+  textDecoration: 'none',
+};
+
+
+const ColabNotebook = () => (
+  <iframe
+    src="https://notebooks.githubusercontent.com/view/ipynb?browser=safari&bypass_fastly=true&color_mode=auto&commit=a7458ed07ea518fac7d0480c57c2b8ebc2359615&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f64616e69666565727265722f63617073746f6e655f70726f6a6563742f613734353865643037656135313866616337643034383063353763326238656263323335393631352f436f7069615f64655f427261696e54756d6f72434e4e2e6970796e62&logged_in=true&nwo=danifeerrer%2Fcapstone_project&path=Copia_de_BrainTumorCNN.ipynb&platform=mac&repository_id=691339228&repository_type=Repository&version=16#1daf8af9-9447-49ef-9ed2-3e72a69a0ddf"
+    title="Colab Notebook"
+    width="100%"
+    height="500px"
+  />
+);
+
 const ModelExplanation = () => {
   const containerStyle = {
     margin: 'auto',
@@ -37,8 +52,13 @@ const ModelExplanation = () => {
   };
 
   return (
+
+    
     <Box style={containerStyle} className="ModelExplanation">
-      <Grid container spacing={2}>
+
+
+      
+      <Grid container spacing={2} >
         <Grid item xs={12}>
           <Typography variant="h2" style={titleStyle} gutterBottom>
             Our Model: Convolutional Neural Network (CNN)
@@ -65,9 +85,12 @@ const ModelExplanation = () => {
             <strong>Inference:</strong>
             - In real-time, our model can analyze new MRI images, providing critical information for early tumor detection and diagnosis.
           </Typography>
+
+          <ColabNotebook/>
+
         </Grid>
-        <Grid item xs={12}>
-          <Link to="/MRI">
+        <Grid item xs={12} >
+          <Link to="/MRI" style={navLink}>
             <Button variant="contained" style={buttonStyle}>
               Get Started with MRI
             </Button>
@@ -98,7 +121,7 @@ const ModelExplanation = () => {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Link to="/StrokeCal">
+          <Link to="/StrokeCal" style={navLink}>
             <Button variant="contained" style={buttonStyle}>
               Get Started with Stroke Calculation
             </Button>
@@ -106,7 +129,6 @@ const ModelExplanation = () => {
         </Grid>
       </Grid>
 
-      <Footer />
     </Box>
   );
 };

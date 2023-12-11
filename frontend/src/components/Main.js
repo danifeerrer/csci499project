@@ -75,7 +75,6 @@ const Main = () => {
       */}   
 
 
-      <Footer />
     </Paper>
   );
 };

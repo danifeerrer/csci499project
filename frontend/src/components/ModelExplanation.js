@@ -9,9 +9,27 @@ const navLink = {
 };
 
 
-const ColabNotebook = () => (
+const CnnNotebook = () => (
   <iframe
     src="https://notebooks.githubusercontent.com/view/ipynb?browser=safari&bypass_fastly=true&color_mode=auto&commit=a7458ed07ea518fac7d0480c57c2b8ebc2359615&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f64616e69666565727265722f63617073746f6e655f70726f6a6563742f613734353865643037656135313866616337643034383063353763326238656263323335393631352f436f7069615f64655f427261696e54756d6f72434e4e2e6970796e62&logged_in=true&nwo=danifeerrer%2Fcapstone_project&path=Copia_de_BrainTumorCNN.ipynb&platform=mac&repository_id=691339228&repository_type=Repository&version=16#1daf8af9-9447-49ef-9ed2-3e72a69a0ddf"
+    title="Colab Notebook"
+    width="100%"
+    height="500px"
+  />
+);
+
+const StrokeNotebook = () => (
+  <iframe
+    src="https://notebooks.githubusercontent.com/view/ipynb?browser=safari&bypass_fastly=true&color_mode=auto&commit=be082895b77eb6b3cb86d058b8fe104d39e21c21&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f64616e69666565727265722f63617073746f6e655f70726f6a6563742f626530383238393562373765623662336362383664303538623866653130346433396532316332312f627261696e5f7374726f6b652e6970796e62&logged_in=true&nwo=danifeerrer%2Fcapstone_project&path=brain_stroke.ipynb&platform=mac&repository_id=691339228&repository_type=Repository&version=16#9e3f6faa-8439-4f85-afe9-1ee37a094a8d"
+    title="Colab Notebook"
+    width="100%"
+    height="500px"
+  />
+);
+
+const HeartNotebook = () => (
+  <iframe
+    src="https://notebooks.githubusercontent.com/view/ipynb?browser=safari&bypass_fastly=true&color_mode=auto&commit=236e5d920045d4d58b657d1d865e686e5d8e94ce&device=unknown_device&docs_host=https%3A%2F%2Fdocs.github.com&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f64616e69666565727265722f63617073746f6e655f70726f6a6563742f323336653564393230303435643464353862363537643164383635653638366535643865393463652f68656172742e6970796e62&logged_in=true&nwo=danifeerrer%2Fcapstone_project&path=heart.ipynb&platform=mac&repository_id=691339228&repository_type=Repository&version=16#c3019bf5-76a3-482c-afcd-5a6c8345d3fb"
     title="Colab Notebook"
     width="100%"
     height="500px"
@@ -86,7 +104,7 @@ const ModelExplanation = () => {
             - In real-time, our model can analyze new MRI images, providing critical information for early tumor detection and diagnosis.
           </Typography>
 
-          <ColabNotebook/>
+          <CnnNotebook/>
 
         </Grid>
         <Grid item xs={12} >
@@ -98,15 +116,17 @@ const ModelExplanation = () => {
         </Grid>
       </Grid>
 
+      
+
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography variant="h2" style={titleStyle} gutterBottom>
-            Logistic Regression Model
+            Linear Regression Model
           </Typography>
         </Grid>
         <Grid item xs={12}>
           <Typography variant="h6" style={descriptionStyle} gutterBottom>
-            Our Logistic Regression model is used for stroke risk calculation based on various input features.
+            Our Linear Regression model is used for stroke risk calculation based on various input features.
             <br />
             <br />
             <strong>How it Works:</strong>
@@ -119,6 +139,9 @@ const ModelExplanation = () => {
             - We train the model using historical data, optimizing it to make accurate predictions.
             - Evaluation metrics include accuracy, precision, recall, and F1-score.
           </Typography>
+
+          <StrokeNotebook/>
+
         </Grid>
         <Grid item xs={12}>
           <Link to="/StrokeCal" style={navLink}>
@@ -128,6 +151,46 @@ const ModelExplanation = () => {
           </Link>
         </Grid>
       </Grid>
+
+
+
+
+
+      <Grid container spacing={2}>
+        <Grid item xs={12}>
+          <Typography variant="h2" style={titleStyle} gutterBottom>
+            Logistic Regression Model
+          </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Typography variant="h6" style={descriptionStyle} gutterBottom>
+            Our Logistic Regression model is used for heart disease calculation based on various input features.
+            <br />
+            <br />
+            <strong>How it Works:</strong>
+            - Logistic Regression estimates the probability of a heart disease occurrence using input features.
+            - It models the relationship between the features and the binary outcome of heart disease (yes/no).
+            - The model is trained on labeled data to learn the relationships and make predictions.
+            <br />
+            <br />
+            <strong>Training and Evaluation:</strong>
+            - We train the model using historical data, optimizing it to make accurate predictions.
+            - Evaluation metrics include accuracy, precision, recall, and F1-score.
+          </Typography>
+
+          <HeartNotebook/>
+
+        </Grid>
+        <Grid item xs={12}>
+          <Link to="/heart-disease" style={navLink}>
+            <Button variant="contained" style={buttonStyle}>
+              Get Started with Heart Disease Calculation
+            </Button>
+          </Link>
+        </Grid>
+      </Grid>
+
+
 
     </Box>
   );

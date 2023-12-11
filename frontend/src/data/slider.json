@@ -26,6 +26,16 @@
         "title": " We understand MRI Can Be Costly, Fill Out Your Health Information and Check If You Have a Probability",
         "path": "/StrokeCal",
         "buttonLabel" : "Explore Now"
+    },
+
+    { 
+        "id" : 4,
+        "image" :"https://ariadentalcare.com/wp-content/uploads/2023/01/Cardiovascular-Disease.jpg",
+        "title": "Worrying About Cardiovascular Health? Fill Out Simple Form To Check Your Condition   ",
+        "path": "/heart-disease",
+        "buttonLabel" : "Learn More"
+
+
     }
 
 

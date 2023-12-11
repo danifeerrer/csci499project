@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, TextField, Button, Grid, Typography, Paper, Select, MenuItem } from '@mui/material';
+import {  TextField, Button, Grid, Typography, MenuItem } from '@mui/material';
 import { Container } from '@mui/system';
 
 const StrokeCal = () => {

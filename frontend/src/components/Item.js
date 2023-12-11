@@ -35,6 +35,8 @@ function Item({item})
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
+        fontFamily:'Impact',
+        fontWeight: 200,
         fontSize: '1.0rem',
         
         

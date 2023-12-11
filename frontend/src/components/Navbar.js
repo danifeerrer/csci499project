@@ -1,13 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Button } from '@mui/material';
-import { Link, NavLink as Router } from 'react-router-dom';
+import { Box, AppBar, Toolbar, Typography, Button } from '@mui/material';
 import logo from '../data/logo.png';
 
 const Navbar = () => {
   const navBarStyle = {
     position: 'fixed',
-    background: '#2c3e50'
+    background: '#2c3e50',
+
   };
 
   const navLink = {
@@ -15,12 +15,11 @@ const Navbar = () => {
   };
 
   const buttonStyle = {
-    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    fontFamily: 'Poppins, sans-serif',
+    fontFamily: '"BM Dohyeon"',
     fontSize: '18px',
-    fontWeight: 'bold',
+    fontWeight: '900',
     color: '#ecf0f1',
     marginLeft: '10px',
     ":hover": {
@@ -41,7 +40,13 @@ const Navbar = () => {
   return (
     <AppBar sx={navBarStyle}>
       <Toolbar>
-        <img src={logo} width="100px" alt="Logo" />
+        <img src={logo} width="420px" height='auto' alt="Logo"  />
+        
+
+        <Box       
+         marginLeft='auto'
+         marginRight='20px'>
+
         <NavLink
           to="/"
           activeClassName="active"
@@ -61,13 +66,7 @@ const Navbar = () => {
 
 
 
-     {/*   <NavLink to="/code" activeClassName="active" className="nav-link" style={navLink}>
-          <Button sx={buttonStyle} color="inherit">
-            Code
-          </Button>
-        </NavLink>
-
-  */}
+ 
 
         {isLoggedIn && (
           <NavLink to="/logout" activeClassName="active" className="nav-link" style={navLink}>
@@ -125,6 +124,8 @@ const Navbar = () => {
           </Button>
         </NavLink>
         )}
+
+    </Box>
       </Toolbar>
     </AppBar>
   );

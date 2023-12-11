@@ -15,13 +15,14 @@ const Navbar = () => {
   };
 
   const buttonStyle = {
+    display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     fontFamily: '"BM Dohyeon"',
     fontSize: '18px',
     fontWeight: '900',
     color: '#ecf0f1',
-    marginLeft: '10px',
+    margin: 'auto',
     ":hover": {
       backgroundColor: '#3498db',
       color: '#ecf0f1',
@@ -45,7 +46,10 @@ const Navbar = () => {
 
         <Box       
          marginLeft='auto'
-         marginRight='20px'>
+         marginRight='20px'
+         display= 'flex'
+         
+        >
 
         <NavLink
           to="/"

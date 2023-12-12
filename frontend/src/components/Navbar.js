@@ -53,16 +53,16 @@ const Navbar = () => {
 
         <NavLink
           to="/"
-          activeClassName="active"
           className="nav-link"
           style={navLink}
+  
         >
-          <Button sx={buttonStyle} color="inherit">
+          <Button sx={buttonStyle} color="inherit" >
             Home
           </Button>
         </NavLink>
 
-        <NavLink to="/model-explanation" activeClassName="active" className="nav-link"  style={navLink}>
+        <NavLink to="/model-explanation"  className="nav-link"  style={navLink}>
   <Button sx={buttonStyle} color="inherit">
    models
   </Button>
@@ -70,7 +70,7 @@ const Navbar = () => {
 
         <NavLink
           to="/MRI"
-          activeClassName="active"
+        
           className="nav-link"
           style={navLink}
         >
@@ -80,7 +80,7 @@ const Navbar = () => {
         </NavLink>
         <NavLink
           to="/StrokeCal"
-          activeClassName="active"
+ 
           className="nav-link"
           style={navLink}
         >
@@ -91,7 +91,7 @@ const Navbar = () => {
 
         <NavLink
           to="/heart-disease"
-          activeClassName="active" 
+        
           className="nav-link"
           style={navLink}
         >
@@ -102,7 +102,7 @@ const Navbar = () => {
 
         {/* Conditionally render the "Login" link */}
         {!isLoggedIn && (
-          <NavLink to="/login" activeClassName="active" className="nav-link" style={navLink}>
+          <NavLink to="/login"  className="nav-link" style={navLink}>
             <Button sx={buttonStyle} color="inherit">
               Login
             </Button>
@@ -110,7 +110,7 @@ const Navbar = () => {
         )}
 
         {isLoggedIn && (
-          <NavLink to="/logout" activeClassName="active" className="nav-link" style={navLink}>
+          <NavLink to="/logout" className="nav-link" style={navLink}>
           <Button sx={buttonStyle} color="inherit">
             Log out
           </Button>

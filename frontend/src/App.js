@@ -3,12 +3,9 @@ import  { BrowserRouter as Router ,Routes, Route} from 'react-router-dom';
 
 
 import Main from './components/Main.js'
-import ModelExplnation from'./components/ModelExplanation.js'
 import StrokeCal from './components/StrokeCal.js'
 import MRI from './components/MRI.js'
 import Navbar from "./components/Navbar.js";
-import Footer from './components/Footer.js';
-import Jupyter from './components/Jupyter.js';
 import AccountCreation from './components/AccountCreation.js';
 import Login from './components/Login.js';
 import Logout from './components/Logout.js';
@@ -31,7 +28,6 @@ function App() {
           <Route path="/heart-disease" element={<HeartDisease />} />
         </Routes>
 
-        <Footer/>
     </Router>
     
   );

@@ -12,12 +12,6 @@ function Item({item})
     boxShadow: "none"
     
     }
-    const imageContainer ={
-        flex: 1,
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-      };
     
     const img ={
         width: '75%',
@@ -44,6 +38,7 @@ function Item({item})
         
       };
     const buttonStyle = {
+        marginTop:'20px',
         backgroundColor: '#0073e6',
         color: '#fff',
         fontWeight: 'bold',

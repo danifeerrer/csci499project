@@ -41,7 +41,7 @@ const Main = () => {
       <Grid>
         <ImgSlide/>
       </Grid>
-
+    
 
       <Footer/>
 

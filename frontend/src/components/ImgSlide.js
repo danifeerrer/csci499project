@@ -17,7 +17,7 @@ function Slide() {
   
     return (
     <Paper style={{boxShadow: "none",
-    marginTop:'100px',
+    marginTop:'80px',
     marginLeft:'30px',
     marginRight:'30px'}}>
         <Carousel style={Paperstyle}>

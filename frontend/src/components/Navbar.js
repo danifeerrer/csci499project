@@ -22,7 +22,7 @@ const Navbar = () => {
     fontSize: '18px',
     fontWeight: '900',
     color: '#ecf0f1',
-    margin: 'auto',
+    margin: '10px',
     ":hover": {
       backgroundColor: '#3498db',
       color: '#ecf0f1',
@@ -64,7 +64,7 @@ const Navbar = () => {
 
         <NavLink to="/model-explanation" activeClassName="active" className="nav-link"  style={navLink}>
   <Button sx={buttonStyle} color="inherit">
-    How It Works
+   models
   </Button>
 </NavLink>
 
@@ -75,7 +75,7 @@ const Navbar = () => {
           style={navLink}
         >
           <Button sx={buttonStyle} color="inherit">
-            MRI
+            Brain Tumor
           </Button>
         </NavLink>
         <NavLink
@@ -85,7 +85,7 @@ const Navbar = () => {
           style={navLink}
         >
           <Button sx={buttonStyle} color="inherit">
-            Calculate Stroke
+            Stroke Risk
           </Button>
         </NavLink>
 

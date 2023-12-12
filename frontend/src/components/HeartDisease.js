@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Box, TextField, Button, Typography, Paper, Select, MenuItem } from '@mui/material';
+import { Grid, TextField, Button, Typography } from '@mui/material';
 import { Container } from '@mui/system';
+import heart from  "../data/heart.png"
 
 const HeartDiseaseCal = () => {
   const [formData, setFormData] = useState({
@@ -47,16 +48,22 @@ const HeartDiseaseCal = () => {
 
   return (
     <Container
-      margin="auto"
+    maxWidth="md"
+      
       sx={{
-        flexDirection: 'column',
         display: 'flex',
-        margin: 'auto',
-        marginTop: '70px',
+        flexDirection: 'column',
+        alignItems: 'center',
+        marginTop: '80px',
       }}
-    >
+    >     
+    
+     <img src={heart} width="100%" height="auto" />
+
       <form onSubmit={handleSubmit}>
-        <div>
+        <Grid container spacing={2} marginTop='10px'>
+            <Grid item xs={6}>
+        
           <Typography variant="h6">Age</Typography>
           <TextField
             name="age"
@@ -64,9 +71,10 @@ const HeartDiseaseCal = () => {
             placeholder="Enter Age"
             value={formData.age}
             onChange={handleChange}
+            fullWidth
           />
-        </div>
-        <div>
+        </Grid>
+          <Grid item xs={6}>
           <Typography variant="h6">Blood Pressure (BP)</Typography>
           <TextField
             name="bp"
@@ -74,29 +82,34 @@ const HeartDiseaseCal = () => {
             placeholder="Enter BP"
             value={formData.bp}
             onChange={handleChange}
+            fullWidth
+            
           />
-        </div>
-        <div>
-          <Typography variant="h6">Cholesterol</Typography>
+        </Grid>
+          <Grid item xs={6}>
+          <Typography variant="h6">Cholesterol </Typography>
           <TextField
             name="cholesterol"
             type="number"
             placeholder="Enter Cholesterol"
             value={formData.cholesterol}
             onChange={handleChange}
+            fullWidth
           />
-        </div>
-        <div>
-          <Typography variant="h6">Fasting Blood Sugar Over 120 (FBS)</Typography>
+       </Grid>
+          <Grid item xs={6}>
+          <Typography variant="h6">Fasting Blood Sugar over 120 (FBS)</Typography>
           <TextField
             name="fbs"
             type="number"
             placeholder="Enter FBS"
             value={formData.fbs}
             onChange={handleChange}
+            fullWidth
+            
           />
-        </div>
-        <div>
+       </Grid>
+          <Grid item xs={6}>
           <Typography variant="h6">Maximum Heart Rate (MaxHR)</Typography>
           <TextField
             name="maxhr"
@@ -104,9 +117,11 @@ const HeartDiseaseCal = () => {
             placeholder="Enter MaxHR"
             value={formData.maxhr}
             onChange={handleChange}
+            fullWidth
           />
-        </div>
-        <Button type="submit" variant="contained" color="primary">
+        </Grid>
+        </Grid>
+        <Button type="submit" variant="contained" color="primary" fullWidth style={{marginTop: '15px'}}>
           Submit
         </Button>
       </form>

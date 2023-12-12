@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import {  TextField, Button, Grid, Typography, MenuItem } from '@mui/material';
 import { Container } from '@mui/system';
+import stroke from  "../data/stroke.png"
 
 const StrokeCal = () => {
   const [formData, setFormData] = useState({
@@ -47,24 +48,28 @@ const StrokeCal = () => {
 
   return (
     <Container
-      maxWidth="sm"
+      maxWidth="xl"
+      
       sx={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        marginTop: '100px',
+        marginTop: '70px',
       }}
     >
+      <img src={stroke} width="63%" height="auto" />
+        
       <form onSubmit={handleSubmit}>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
-            <Typography variant="h6">Age</Typography>
+        <Grid container spacing={2} marginTop='10px'>
+          <Grid item xs={6}>
+            <Typography variant="h6" >Age</Typography>
             <TextField
               name="age"
               type="number"
               placeholder="Enter Age"
               value={formData.age}
               onChange={handleChange}
+              fullWidth
             />
           </Grid>
           <Grid item xs={6}>
@@ -120,7 +125,7 @@ const StrokeCal = () => {
             />
           </Grid>
         </Grid>
-        <Button type="submit" variant="contained" color="primary" fullWidth style={{marginTop: '15px'}}>
+        <Button type="submit" variant="contained" color="primary" fullWidth style={{marginTop: '15px', alignItems:'center'}}>
           Submit
         </Button>
       </form>

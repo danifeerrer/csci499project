@@ -125,20 +125,21 @@ const ModelExplanation = () => {
           </Typography>
         </Grid>
         <Grid item xs={12}>
-          <Typography variant="h6" style={descriptionStyle} gutterBottom>
-            Our Linear Regression model is used for stroke risk calculation based on various input features.
+        <Typography variant="h6" style={descriptionStyle} gutterBottom>
+           Our Linear Regression model is utilized to assess stroke risk based on a variety of input features.
             <br />
             <br />
             <strong>How it Works:</strong>
-            - Logistic Regression estimates the probability of a stroke occurrence using input features.
-            - It models the relationship between the features and the binary outcome of stroke (yes/no).
-            - The model is trained on labeled data to learn the relationships and make predictions.
+           - Linear Regression predicts the likelihood of stroke by analyzing input features.
+            - It establishes a linear relationship between the features and the continuous outcome related to stroke risk.
+             - The model undergoes training using labeled data to understand feature relationships and enable predictions.
             <br />
             <br />
-            <strong>Training and Evaluation:</strong>
-            - We train the model using historical data, optimizing it to make accurate predictions.
-            - Evaluation metrics include accuracy, precision, recall, and F1-score.
-          </Typography>
+      <strong>Training and Evaluation:</strong>
+      - Training involves utilizing historical data to refine the model for improved predictive capabilities.
+       - Evaluation metrics revolve around measures like mean squared error, R-squared, and root mean squared error (RMSE).
+</Typography>
+
 
           <StrokeNotebook/>
 

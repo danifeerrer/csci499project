@@ -6,6 +6,7 @@ import numpy as np
 import io
 import joblib
 from PIL import Image
+import sklearn
 
 app = Flask("Application")
 CORS(app)

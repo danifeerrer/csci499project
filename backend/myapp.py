@@ -40,7 +40,7 @@ def predict_mri():
         predictions = loaded_model.predict(image)
 
         # Assuming you have two classes (no_tumor or tumor)
-        class_labels = ['no_tumor', 'tumor']
+        class_labels = ['No tumor detected.', 'Tumor detected.']
         predicted_class = class_labels[np.argmax(predictions)]
 
         print(predicted_class)

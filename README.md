@@ -1,61 +1,116 @@
-# BT-Classifier
+# Fullstack Project README
 
-This project is divided into two main parts: the backend and the frontend.
+This repository contains a full-stack project that includes both frontend and backend components. The project utilizes technologies such as Python, Flask, Node.js, and React. The backend includes machine learning models for predicting brain tumors, strokes, and heart diseases.
 
-## Backend
+## Getting Started
 
+### Prerequisites
 
-### Running the Backend
+- [Python](https://www.python.org/downloads/)
+- [Node.js](https://nodejs.org/)
+- [npm](https://www.npmjs.com/)
 
-1. Navigate to the `backend` folder in the terminal.
+### Installation
 
-    ```bash
-    cd backend
-    ```
-
-
-2. Run the backend server.
+1. **Clone the repository:**
 
     ```bash
-    python myapp.py
+    git clone https://github.com/danifeerrer/csci499project.git
     ```
 
-    This will start the CNN model
-
-3. Additionally, you have a separate Python script, run it as well.
+2. **Navigate to the backend folder:**
 
     ```bash
-    python stroke.py
+    cd your-repository/backend
     ```
 
-    This will start the RandomForest model
-
-## Frontend
-
-
-### Running the Frontend
-
-1. Navigate to the `frontend` folder in the terminal.
+3. **Create and activate a Python virtual environment:**
 
     ```bash
-    cd frontend
+    python -m venv venv
+    source venv/bin/activate   # On Windows, use `venv\Scripts\activate`
     ```
 
-2. Install the required npm packages.
+4. **Install required Python packages:**
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+    This will install the following packages:
+    - scikit-learn
+    - keras
+    - tensorflow
+    - Flask
+    - Cors
+    - matplotlib
+    - pandas
+
+5. **Run the database setup (assuming you have Node.js installed):**
+
+    ```bash
+    cd database
+    node database.js
+    ```
+
+    Make sure to install Express dependencies:
 
     ```bash
     npm install
     ```
 
-3. Start the React development server.
+### Running the Application
+
+#### Backend:
+
+1. **Run the Flask application:**
+
+    ```bash
+    python app.py
+    ```
+
+2. **To run the machine learning models for brain tumors, strokes, and heart diseases:**
+
+    - **Brain Tumor Model:**
+
+        ```bash
+        python myapp.py
+        ```
+
+    - **Stroke Predictor:**
+
+        ```bash
+        python stroke.py
+        ```
+
+    - **Heart Disease Predictor:**
+
+        ```bash
+        python Hdisease.py
+        ```
+
+#### Frontend:
+
+1. **Navigate to the frontend folder:**
+
+    ```bash
+    cd your-repository/frontend
+    ```
+
+2. **Install dependencies:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Run the React application:**
 
     ```bash
     npm start
     ```
 
-    This will launch the frontend application.
+Visit [http://localhost:3000](http://localhost:3000) in your web browser to view the full application.
 
-4. Open your browser and go to [http://localhost:3000](http://localhost:3000) to view the application.
+## Contributing
 
-
-Happy coding!
+Feel free to contribute to this project by submitting issues or pull requests.

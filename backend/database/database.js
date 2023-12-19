@@ -63,8 +63,13 @@ app.post('/api/login', async (req, res) => {
       return res.status(400).json({ error: 'Username and password are required' });
     }
 
+    console.log(username);
+    console.log(password);
+    
+    // const query = 'SELECT * FROM user_results WHERE username = \" OR id=1; -- ? AND passwd = ?
+
     // Check if the user exists in the database (replace with your authentication logic)
-    const query = 'SELECT * FROM user_results WHERE username = ? AND passwd = ?';
+    const query = `SELECT * FROM user_results WHERE username = '${username}' AND passwd = '${password}'`;
     db.query(query, [username, password], (err, result) => {
       if (err) {
         console.error('Error executing query:', err);

@@ -21,7 +21,7 @@ This repository contains a full-stack project that includes both frontend and ba
 2. **Navigate to the backend folder:**
 
     ```bash
-    cd your-repository/backend
+    cd csci499project/backend
     ```
 
 3. **Create and activate a Python virtual environment:**
@@ -33,11 +33,9 @@ This repository contains a full-stack project that includes both frontend and ba
 
 4. **Install required Python packages:**
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+    
 
-    This will install the following packages:
+    Install the following packages:
     - scikit-learn
     - keras
     - tensorflow
@@ -63,13 +61,9 @@ This repository contains a full-stack project that includes both frontend and ba
 
 #### Backend:
 
-1. **Run the Flask application:**
 
-    ```bash
-    python app.py
-    ```
 
-2. **To run the machine learning models for brain tumors, strokes, and heart diseases:**
+1. **To run the machine learning models for brain tumors, strokes, and heart diseases:**
 
     - **Brain Tumor Model:**
 
@@ -94,7 +88,7 @@ This repository contains a full-stack project that includes both frontend and ba
 1. **Navigate to the frontend folder:**
 
     ```bash
-    cd your-repository/frontend
+    cd csci499project/frontend
     ```
 
 2. **Install dependencies:**
